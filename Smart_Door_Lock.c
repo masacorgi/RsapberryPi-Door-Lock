@@ -37,7 +37,6 @@ int main(void)
 	fnd_str_size=4;
 	memset(fnd_data,0,sizeof(fnd_data));
 
-
         while(1){ //repeat until dip switch[1] pushed
                 sleep(1);// read repeated on 1 second
                 read(dip_dev, &dip_sw_buff, 100);
@@ -48,17 +47,11 @@ int main(void)
 
         }
 
-
-
-
 	while(1){ 
 // while loop for intifite -     1. password wrong- repeat, 2. password correct- door open, repeat.
-
-
         printf("\npassword process start\n");
 	printf("\ndip_switch pulled\nplease press password - text lcd\n"); 
 	write(text_lcd_dev,"please press         password           ",MAX_BUFF);//print to fpga_text_lcd
-
 
 	unsigned char push_sw_buff[MAX_BUTTON];
         int buff_size = sizeof(push_sw_buff);
@@ -87,7 +80,6 @@ int main(void)
 		password_input[2],password_input[3]); // 4 num print to console
 	write(fnd_dev,&fnd_data,4); // 4 num print to fpga_fnd
 
-
 	// if wrong password - flash lights 3 times on LED
         int data = 255;
         int data2 = 0;
@@ -111,7 +103,6 @@ int main(void)
                         break;
                 }
         }
-
 
 	//if password incorrect - goto while loop's start point(password inserting process)
 	if(password[0] != password_input[0]){
@@ -142,7 +133,6 @@ int main(void)
                 write(dot_dev,fpga_number[0],str_size); //dot reset to 0
                 continue; // while loop restart -> goto password input process
 	}
-
 
 	int motor_action=1;
         int motor_direction=1;
