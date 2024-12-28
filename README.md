@@ -82,4 +82,4 @@ step motor를 시계 방향으로 4초 회전한다. (문 닫힘)
 <br>
 소스코드는 다음 파일에서 열람하실 수 있습니다.   
 
-[Smart_Door_Lock.c](./Smart_Door_Lock.c]
+[Smart_Door_Lock.c](./Smart_Door_Lock.c)
